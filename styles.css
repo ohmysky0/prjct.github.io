@@ -1,0 +1,134 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f39c12;
+    --background-color: #f4f6f9;
+    --text-color: #333;
+    --input-border: #d1d1d1;
+    --input-focus: #4a90e2;
+    --card-background: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+.input-section, .result-section {
+    flex: 1;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: var(--input-focus);
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #3a7bc8;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#result h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+#skf-prediction, #statistics, #recommendations {
+    background-color: #e8f4fd;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+#chart-container, #risk-factors-chart-container, #quality-of-life-chart-container {
+    height: 300px;
+    margin-bottom: 15px;
+}
+
+.statistic-item, .recommendation-item {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
